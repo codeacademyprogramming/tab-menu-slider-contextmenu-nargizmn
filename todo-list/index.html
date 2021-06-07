@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Context menu -->
+    <div id="context-menu" class="d-none position-fixed d-block" style="width: 200px;">
+        <ul class="list-group">
+            <li class="move-item list-group-item d-flex justify-content-between" style="cursor: pointer;">
+            <span>Move item to</span>
+            <svg class = "chevron-icon mt-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg></li>
+            <li class="list-group-item" id='delete-item' style="cursor: pointer;">Delete item</li>
+            <li class="list-group-item" id='archive-item' style="cursor: pointer;">Archive item</li>
+        </ul>
+    </div>
+
+    <!-- Move item menu -->
+    <div id="move-item-menu" class="d-none position-fixed d-block" style="width: 200px;">
+        <ul class="list-group">
+            <li class="to-do-list list-group-item" style="cursor: pointer;">Todo list</li>
+            <li class="in-progress-list list-group-item" style="cursor: pointer;">In progress</li>
+            <li class="done-list list-group-item" style="cursor: pointer;">Done</li>
+        </ul>
+    </div>
+
+    <!-- Modal  -->
+    <div class="modal" style="z-index: 2;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add new task</h5>
+              <button type="button" class="modal-close-button btn-close"></button>
+            </div>
+            <div class="modal-body">
+              <input type="text" class="form-control task-adding-input" placeholder="Task name">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="modal-close-button btn btn-secondary">Close</button>
+              <button type="button" class="modal-save-button btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="overlay" style="background-color: rgba(0, 0, 0, 0.3);"></div>
+
+
+    <div class="container mt-4">
+        <div class="row text-center">
+            <div class="task-list col">
+                <p class="fw-bold fs-2 text-light bg-primary p-3">Todo list</p>
+                <button class="add-button btn btn-outline-primary w-100">+ Add Task</button>
+            </div>
+            <div class="task-list col">
+                <p class="fw-bold fs-2 text-light bg-warning p-3">In progress</p>
+                <button class="add-button btn btn-outline-primary w-100">+ Add Task</button>
+            </div>
+            <div class="task-list col">
+                <p class="fw-bold fs-2 text-light bg-success p-3">Done</p>
+                <button class="add-button btn btn-outline-primary w-100">+ Add Task</button>
+            </div>
+            <button type="button" class="restore-button btn btn-danger d-block p-3 fs-5 mt-5">Restore archived tasks</button>
+        </div>
+    </div>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
